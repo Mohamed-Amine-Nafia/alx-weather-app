@@ -15,7 +15,7 @@ function SuggestedCity() {
         return (
           <span
             key={city}
-            className=" bg-black/10 block w-fit my-2 backdrop-blur-lg text-white py-2 px-3 cursor-pointer"
+            className=" bg-black/10 block w-fit my-2 backdrop-blur-lg text-white py-2 px-3 cursor-pointer hover:scale-105 duration-200 ease-in-out"
           >
             {city}
           </span>

@@ -1,8 +1,10 @@
 function WeatherDetails() {
   return (
-    <div className="flex flex-col h-2/3 text-md md:text-lg  md:h-1/2 border-b-1 border-white text-white py-2">
-      <h4 className="text-white mb-2 pb-1  border-b-1">Weather Details</h4>
-      <div className="my-2 flex justify-between">
+    <div className="flex flex-col h-2/3 text-md  md:h-1/2 border-b-1 border-white text-white">
+      <h4 className="text-white text-lg lg:my-3 my-2 border-b-1">
+        Weather Details
+      </h4>
+      <div className="my-2 flex  justify-between">
         <span>Cloudy</span>
         <span>89%</span>
       </div>

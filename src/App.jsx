@@ -1,8 +1,13 @@
+import NotificationMessage from "./components/NotificationMessage";
 import SearchBar from "./components/SearchBar";
 import SuggestedCity from "./components/SuggestedCity";
 import WeatherDetails from "./components/WeatherDetails";
+import { useInput } from "./store/useInput";
+import { useNotification } from "./store/useNotification";
 
 function App() {
+  const { inputValue, setInputValue } = useInput();
+  const { Notification, setNotification } = useNotification();
   return (
     <div className="relative w-screen sm:min-h-screen lg:h-screen bg-[#242424] flex justify-center items-center lg:overflow-hidden font-poppins">
       <div
@@ -11,7 +16,7 @@ function App() {
         <div className="lg:h-full lg:w-3/5 flex flex-col lg:p-12 text-white lg:justify-between p-6">
           <h1 className="lg:text-md font-medium  text-xl">Weather</h1>
           <div className="flex items-center gap-1  my-6 bg-black/10 p-3 backdrop-blur-lg">
-            <h2 className="lg:text-9xl font-semibold  text-6xl ">21°</h2>
+            <h2 className="lg:text-8xl font-semibold  text-6xl ">21°</h2>
             <div className="ml-4 whitespace-nowrap">
               <h3 className="lg:text-2xl font-medium text-xl">London</h3>
               <span className="lg:text-sm text-xs">19-09-2025</span>
@@ -25,7 +30,7 @@ function App() {
             </div>
           </div>
         </div>
-        <div className="lg:h-full h-3/4 lg:w-2/5 bg-black/10 lg:p-10 p-8  backdrop-blur-lg flex flex-col justify-between">
+        <div className="lg:h-full h-3/4 lg:w-2/5 bg-black/10 lg:p-10 mx-6 lg:mx-0 p-4  backdrop-blur-lg flex flex-col justify-between">
           <SearchBar />
           <SuggestedCity />
           <WeatherDetails />
