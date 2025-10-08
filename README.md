@@ -2,7 +2,7 @@
 
 A responsive weather application built with **React**, **Vite**, and **Tailwind CSS**. Users can search for weather information by city or use their current location to get live weather updates.
 
-🔗 [Live Demo on Vercel](https://alx-capstone-project-weather-app.vercel.app/)
+🔗 [Live Demo on Vercel](https://alx-weather-app.vercel.app/)
 
 ---
 
