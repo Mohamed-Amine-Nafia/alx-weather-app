@@ -3,13 +3,15 @@ import { DataContext } from "../context/dataContext";
 function SuggestedCity() {
   const { getData } = useContext(DataContext);
   const cities = [
-    "London",
-    "New York",
+    "Rabat",
+    "Tokyo",
     "Hong Kong",
     "Moscow",
     "New Delhi",
-    "Rabat",
-    "Paris",
+    "Prague",
+    "Dakar",
+    "Abuja",
+    "Brasilia",
   ];
   function handleClick(city) {
     getData(city);

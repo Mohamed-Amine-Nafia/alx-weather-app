@@ -8,11 +8,16 @@ import { useNotification } from "./store/useNotification";
 import { fetchWeatherData } from "./services/weatherData";
 import { fetchCurrentLocation } from "./services/currentLocation";
 import { DataContext } from "./context/dataContext";
+import Loading from "./components/Loading";
+import NotFound from "./components/NotFound";
+import { useNotFound } from "./store/useNotFound";
 
 function App() {
   const [weatherData, setWeatherData] = useState();
   const { inputValue, setInputValue } = useInput();
   const { Notification, setNotification } = useNotification();
+  const [isLoading, setLoading] = useState(false);
+  const { isNotFound, setNotFound } = useNotFound();
   const backgrounds = {
     Rain: "bg-[url(./assets/rainy.webp)]",
     Drizzle: "bg-[url(./assets/rainy.webp)]",
@@ -44,6 +49,7 @@ function App() {
       setNotification(true);
       return;
     }
+    setLoading(true);
     try {
       const { timeZone } = await fetchCurrentLocation(city);
       const data = await fetchWeatherData(city || inputValue);
@@ -54,9 +60,13 @@ function App() {
             timeZone: timeZone,
           });
           setInputValue("");
+          setLoading(false);
         }
       }, 1500);
     } catch (err) {
+      setNotFound(true);
+      setLoading(false);
+      setInputValue("");
       console.error("Error fetching weather:", err);
     }
   }
@@ -65,6 +75,7 @@ function App() {
 
   return (
     <DataContext.Provider value={{ weatherData, getData }}>
+      {isLoading && <Loading />}
       <div className="relative w-screen sm:min-h-screen lg:h-screen bg-[#242424] flex justify-center items-center lg:overflow-hidden font-poppins">
         <div
           className={`flex lg:h-3/4 md:h-screen md:w-screen  lg:w-3/4 bg-cover bg-center bg-no-repeat ${backgrounds[checker]} flex-col w-full h-full lg:flex-row lg:drop-shadow-2xl/70`}
@@ -105,6 +116,7 @@ function App() {
           </div>
         </div>
         {Notification && <NotificationMessage />}
+        {isNotFound && <NotFound />}
       </div>
     </DataContext.Provider>
   );
