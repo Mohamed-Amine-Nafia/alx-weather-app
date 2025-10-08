@@ -30,7 +30,7 @@ A responsive weather application built with **React**, **Vite**, and **Tailwind 
 
 ## 📸 Screenshots
 
-![Weather App Screenshot](./weather-app/src/assets/Screenshot.png)
+![Weather App Screenshot](./src/assets/Screenshot.png)
 
 ---
 
@@ -45,7 +45,7 @@ A responsive weather application built with **React**, **Vite**, and **Tailwind 
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/Mohamed-Amine-Nafia/alx-capstone-project-weather-app.git
+   git clone https://github.com/Mohamed-Amine-Nafia/alx-weather-app.git
    cd weather-app
    ```
 
