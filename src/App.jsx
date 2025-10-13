@@ -22,7 +22,7 @@ function App() {
     Rain: "bg-[url(./assets/rainy.webp)]",
     Drizzle: "bg-[url(./assets/rainy.webp)]",
     Clear: "bg-[url(./assets/clear.webp)]",
-    Clouds: "bg-[url(./assets/cloudy.jpg)]",
+    Clouds: "bg-[url(./assets/cloudy.webp)]",
     Snow: "bg-[url(./assets/snowy.webp)]",
     Mist: "bg-[url(./assets/misty.webp)]",
     Haze: "bg-[url(./assets/haze.webp)]",
